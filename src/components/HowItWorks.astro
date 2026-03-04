@@ -1,0 +1,56 @@
+---
+const steps = [
+  {
+    number: '01',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>`,
+    title: 'Define Your Constraints',
+    description: 'Enter your team members & their availabilities and skills, projects & their demands, and optimization criteria.',
+  },
+  {
+    number: '02',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/><path d="m9 12 2 2 4-4"/></svg>`,
+    title: 'Optimize Assignments',
+    description: 'Using logic-based AI, ReSolve finds the best monthly assignment of work hours per person and project, maximizing total billable hours while satisfying every constraint.',
+  },
+  {
+    number: '03',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>`,
+    title: 'Explore What-If Scenarios & Re-Plan',
+    description: 'In agile environments, things change. "Can I accept this new project?" "What happens if Anna goes on leave?" Instantly re-plan and see the impact on your entire team.',
+  },
+];
+---
+
+<section id="how-it-works" class="py-20 md:py-28 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="inline-block text-xs font-semibold text-primary uppercase tracking-wider mb-3">How It Works</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-heading">
+        Three steps to <span class="text-primary">optimal</span> project resource plans
+      </h2>
+      <p class="mt-4 text-muted max-w-2xl mx-auto">
+        No more manual guesswork. Define your team and project situation, let our AI-based tool solve the constraint optimization problem.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 relative">
+      <!-- Connector line (desktop) -->
+      <div class="hidden md:block absolute top-16 left-[20%] right-[20%] h-px bg-gradient-to-r from-primary/30 via-primary/60 to-primary/30"></div>
+
+      {steps.map((step) => (
+        <div class="relative text-center group">
+          <!-- Number badge -->
+          <div class="relative mx-auto w-16 h-16 rounded-2xl bg-primary-50 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm">
+            <Fragment set:html={step.icon} />
+            <span class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shadow">
+              {step.number}
+            </span>
+          </div>
+
+          <h3 class="text-lg font-bold text-heading mb-2">{step.title}</h3>
+          <p class="text-sm text-muted leading-relaxed">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

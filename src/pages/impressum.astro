@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Impressum — ReSolve" description="Impressum and legal information for ReSolve.">
+  <Navbar />
+
+  <main class="pt-28 pb-20 md:pt-36 md:pb-28">
+    <div class="max-w-3xl mx-auto px-6">
+      <h1 class="text-3xl font-bold text-heading mb-4">Impressum</h1>
+
+      <p class="text-body">
+        For any inquiry, please contact us at:
+        <a href="mailto:hello@peerlane.at" class="text-primary hover:underline">hello@peerlane.at</a>
+      </p>
+
+      <p class="mt-4 text-body">Responsible for the website:</p>
+
+      <img
+        src="/imprint.png"
+        alt="Impressum"
+        width="300"
+        class="mt-4"
+      />
+
+      <div class="mt-12 text-center">
+        <a href="/" class="inline-flex items-center gap-2 text-primary hover:text-primary-hover font-medium transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to landing page
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
