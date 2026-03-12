@@ -1,4 +1,13 @@
 ---
+import type { Locale } from '../i18n/translations';
+import { t } from '../i18n/translations';
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
+const prefix = lang === 'de' ? '/de' : '';
 const year = new Date().getFullYear();
 ---
 
@@ -17,13 +26,13 @@ const year = new Date().getFullYear();
 
       <!-- Links -->
       <div class="flex items-center gap-6 text-xs text-muted">
-        <a href="/privacy" class="hover:text-heading transition-colors">Privacy Policy</a>
-        <a href="/impressum" class="hover:text-heading transition-colors">Imprint</a>
+        <a href={`${prefix}/privacy`} class="hover:text-heading transition-colors">{t(lang, 'footerPrivacy')}</a>
+        <a href={`${prefix}/impressum`} class="hover:text-heading transition-colors">{t(lang, 'footerImprint')}</a>
       </div>
 
       <!-- Copyright -->
       <p class="text-xs text-muted">
-        &copy; {year} ReSolve. All rights reserved.
+        &copy; {year} ReSolve. {t(lang, 'footerRights')}
       </p>
     </div>
   </div>

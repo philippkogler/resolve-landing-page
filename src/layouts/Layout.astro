@@ -1,20 +1,24 @@
 ---
 import '../styles/global.css';
 import { API_BASE_URL } from 'astro:env/client';
+import type { Locale } from '../i18n/translations';
+import { t, getAlternateLocale, getLocalePath } from '../i18n/translations';
 
 interface Props {
   title?: string;
   description?: string;
+  lang?: Locale;
 }
 
 const {
-  title = 'ReSolve — Resolve Project Resource Planning Chaos',
-  description = 'ReSolve is a scheduling tool for team leaders that optimizes monthly work-hour assignments across people and projects, maximizing billable hours while respecting every constraint.',
+  lang = 'en',
+  title = t(lang, 'siteTitle'),
+  description = t(lang, 'siteDescription'),
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,6 +28,10 @@ const {
     <!-- SEO -->
     <title>{title}</title>
     <meta name="description" content={description} />
+
+    <!-- Alternate language -->
+    <link rel="alternate" hreflang={getAlternateLocale(lang)} href={getLocalePath(getAlternateLocale(lang), Astro.url.pathname)} />
+    <link rel="alternate" hreflang={lang} href={getLocalePath(lang, Astro.url.pathname)} />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />

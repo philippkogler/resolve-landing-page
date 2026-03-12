@@ -1,10 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import { t } from '../i18n/translations';
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { t } from '../../i18n/translations';
 
-const lang = 'en';
+const lang = 'de';
 ---
 
 <Layout title={t(lang, 'impressumTitle')} description={t(lang, 'impressumDescription')} lang={lang}>
@@ -29,7 +29,7 @@ const lang = 'en';
       />
 
       <div class="mt-12 text-center">
-        <a href="/" class="inline-flex items-center gap-2 text-primary hover:text-primary-hover font-medium transition-colors">
+        <a href="/de" class="inline-flex items-center gap-2 text-primary hover:text-primary-hover font-medium transition-colors">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
           </svg>

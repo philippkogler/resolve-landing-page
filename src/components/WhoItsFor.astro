@@ -1,41 +1,50 @@
 ---
+import type { Locale } from '../i18n/translations';
+import { t } from '../i18n/translations';
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
+
 const personas = [
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
-    title: 'Team & Group Leaders',
-    desc: 'You manage a team of 5 to 100 people across 10 to 200 projects and need to decide who works on what each month.',
+    title: t(lang, 'whoPersona1Title'),
+    desc: t(lang, 'whoPersona1Desc'),
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/></svg>`,
-    title: 'Agile Project Environments',
-    desc: 'Your organization runs dozens of concurrent projects with overlapping timelines, shifting priorities, and flexible planning cycles.',
+    title: t(lang, 'whoPersona2Title'),
+    desc: t(lang, 'whoPersona2Desc'),
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg>`,
-    title: 'Flexible but Constrained',
-    desc: 'People can work on multiple projects, but availability, skill sets, project demands, and policies set hard limits on who goes where.',
+    title: t(lang, 'whoPersona3Title'),
+    desc: t(lang, 'whoPersona3Desc'),
   },
 ];
 
 const checkmarks = [
-  '5 to 100 team members to coordinate',
-  '10 to 200 projects running in parallel',
-  'Planned monthly hour allocations per person per project',
-  'Constraints on availability, skills, and project needs',
-  'Need to maximize a team-level objective (e.g., total bookable hours over all projects)',
-  'What-if analysis for new projects or re-planning',
+  t(lang, 'whoCheck1'),
+  t(lang, 'whoCheck2'),
+  t(lang, 'whoCheck3'),
+  t(lang, 'whoCheck4'),
+  t(lang, 'whoCheck5'),
+  t(lang, 'whoCheck6'),
 ];
 ---
 
 <section id="who-its-for" class="py-20 md:py-28">
   <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-16">
-      <span class="inline-block text-xs font-semibold text-primary uppercase tracking-wider mb-3">Who It's For</span>
+      <span class="inline-block text-xs font-semibold text-primary uppercase tracking-wider mb-3">{t(lang, 'whoSectionLabel')}</span>
       <h2 class="text-3xl md:text-4xl font-bold text-heading">
-        Built for managing <span class="text-primary">planning complexity in agile teams</span>
+        {t(lang, 'whoTitle')} <span class="text-primary">{t(lang, 'whoTitleHighlight')}</span>
       </h2>
       <p class="mt-4 text-muted max-w-2xl mx-auto">
-        ReSolve is designed for team and group leaders in agile environments who need to optimally assign people to projects under real-world constraints.
+        {t(lang, 'whoSubtitle')}
       </p>
     </div>
 
@@ -54,7 +63,7 @@ const checkmarks = [
 
     <!-- Checklist -->
     <div class="bg-surface rounded-2xl border border-border p-8 md:p-10">
-      <h3 class="text-lg font-bold text-heading mb-6 text-center">ReSolve is the right fit if you have…</h3>
+      <h3 class="text-lg font-bold text-heading mb-6 text-center">{t(lang, 'whoChecklistTitle')}</h3>
       <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3 max-w-3xl mx-auto">
         {checkmarks.map((item) => (
           <div class="flex items-start gap-3">

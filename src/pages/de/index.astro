@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Hero from '../../components/Hero.astro';
+import WhoItsFor from '../../components/WhoItsFor.astro';
+import HowItWorks from '../../components/HowItWorks.astro';
+import Features from '../../components/Features.astro';
+import Footer from '../../components/Footer.astro';
+
+const lang = 'de' as const;
+---
+
+<Layout lang={lang}>
+  <Navbar lang={lang} />
+  <Hero lang={lang} />
+  <WhoItsFor lang={lang} />
+  <HowItWorks lang={lang} />
+  <Features lang={lang} />
+  <Footer lang={lang} />
+</Layout>
+
+<script>
+  import { trackImpression, trackAction } from '../../lib/analytics';
+
+  // Track page impression on load
+  trackImpression();
+
+  // Track all CTA button / link clicks with data-track attribute
+  document.querySelectorAll('[data-track]').forEach((el) => {
+    el.addEventListener('click', () => {
+      const actionName = (el as HTMLElement).dataset.track!;
+      trackAction(actionName);
+    });
+  });
+</script>

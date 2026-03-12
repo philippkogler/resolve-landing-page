@@ -1,39 +1,48 @@
 ---
+import type { Locale } from '../i18n/translations';
+import { t } from '../i18n/translations';
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = 'en' } = Astro.props;
+
 const features = [
     {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>`,
-    title: 'Simple Web Platform',
-    description: 'An intuitive browser-based interface to manage your people, projects, and constraints. No installation is needed, just log in and start planning.',
+    title: t(lang, 'feature1Title'),
+    description: t(lang, 'feature1Desc'),
     color: 'primary',
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>`,
-    title: 'Automated Data Import / Export',
-    description: 'Import people, projects, and schedules from MS Project, Excel, or other tools. ',
+    title: t(lang, 'feature2Title'),
+    description: t(lang, 'feature2Desc'),
     color: 'secondary',
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 7h3v3H7z"/><path d="M14 7h3v3h-3z"/><path d="M7 14h3v3H7z"/><path d="M14 14h3v3h-3z"/></svg>`,
-    title: 'Optimal project resource plan',
-    description: 'Automatically assign monthly hours per person and project. The logic-based AI respects all constraints and maximizes your objective (e.g., total billable hours).',
+    title: t(lang, 'feature3Title'),
+    description: t(lang, 'feature3Desc'),
     color: 'primary',
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>`,
-    title: 'What-If Scenarios',
-    description: 'Ask "what if" questions and instantly see how changes (new hires, leaves, budget shifts) affect your entire plan.',
+    title: t(lang, 'feature4Title'),
+    description: t(lang, 'feature4Desc'),
     color: 'secondary',
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
-    title: 'New-Project Feasibility',
-    description: '"Can we take on this project?" ReSolve tells you instantly if a new engagement fits, and what trade-offs it requires.',
+    title: t(lang, 'feature5Title'),
+    description: t(lang, 'feature5Desc'),
     color: 'primary',
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>`,
-    title: 'Year Re-Planning',
-    description: 'When things change, you can re-plan the rest of the year.',
+    title: t(lang, 'feature6Title'),
+    description: t(lang, 'feature6Desc'),
     color: 'secondary',
   },
   
@@ -48,12 +57,12 @@ const colorMap: Record<string, { bg: string; icon: string; border: string }> = {
 <section id="features" class="py-20 md:py-28 bg-surface">
   <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-16">
-      <span class="inline-block text-xs font-semibold text-primary uppercase tracking-wider mb-3">Features</span>
+      <span class="inline-block text-xs font-semibold text-primary uppercase tracking-wider mb-3">{t(lang, 'featuresSectionLabel')}</span>
       <h2 class="text-3xl md:text-4xl font-bold text-heading">
-        Everything you need to <span class="text-primary">plan smarter</span>
+        {t(lang, 'featuresTitle')} <span class="text-primary">{t(lang, 'featuresTitleHighlight')}</span>{t(lang, 'featuresTitleEnd')}
       </h2>
       <p class="mt-4 text-muted max-w-2xl mx-auto">
-        ReSolve uses logic-based AI to guarantee constraint satisfaction and design the optimal project resource plan.
+        {t(lang, 'featuresSubtitle')}
       </p>
     </div>
 
