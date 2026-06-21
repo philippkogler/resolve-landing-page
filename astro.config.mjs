@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://re-solve.at',
   vite: {
     plugins: [tailwindcss()],
   },
@@ -12,7 +13,7 @@ export default defineConfig({
       API_BASE_URL: envField.string({
         context: 'client',
         access: 'public',
-        default: 'https://example.com/api',
+        default: 'https://re-solve.at/api',
       }),
     },
   },

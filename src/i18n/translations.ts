@@ -3,7 +3,7 @@ export type Locale = 'en' | 'de';
 export const translations = {
   en: {
     // Layout
-    siteTitle: 'ReSolve | Project Resource Planning',
+    siteTitle: 'ReSolve | People Planning',
     siteDescription: 'ReSolve is a scheduling tool for team leaders that optimizes monthly work-hour assignments across people and projects, maximizing billable hours while respecting every constraint.',
 
     // Navbar
@@ -13,13 +13,13 @@ export const translations = {
     navGetInTouch: 'Get in Touch',
 
     // Hero
-    heroBadge: 'Project Resource Planning, Optimized',
+    heroBadge: 'People planning, solved.',
     heroTitle1: 'your',
-    heroTitle2: 'project resource planning',
+    heroTitle2: 'people planning',
     heroTitle3: 'chaos and',
     heroTitle4: 'maximize',
-    heroTitle5: 'your objective',
-    heroSubtitle: 'ReSolve helps assign monthly people hours per person and project, while respecting customizable constraints (availability, project demands, ...), to maximize total billable hours.',
+    heroTitle5: 'your objectives',
+    heroSubtitle: 'ReSolve helps assign monthly people hours per person and project, while respecting your custom constraints (availability, project demands, ...), to maximize your objectives.',
     heroGetInTouch: 'Get in Touch',
     heroHowItWorks: 'See How It Works',
     heroCardTitle: 'Team Schedule | Q2 2026',
@@ -52,12 +52,12 @@ export const translations = {
     howSectionLabel: 'How It Works',
     howTitle: 'Three steps to',
     howTitleHighlight: 'optimal',
-    howTitleEnd: 'project resource plans',
+    howTitleEnd: 'people plans',
     howSubtitle: 'No more manual guesswork. Define your team and project situation, let our AI-based tool solve the constraint optimization problem.',
     howStep1Title: 'Define Your Constraints',
     howStep1Desc: 'Enter your team members & their availabilities and skills, projects & their demands, and optimization criteria.',
     howStep2Title: 'Optimize Assignments',
-    howStep2Desc: 'Using logic-based AI, ReSolve finds the best monthly assignment of work hours per person and project, maximizing total billable hours while satisfying every constraint.',
+    howStep2Desc: 'Using logic-based AI, ReSolve finds the best monthly assignment of work hours per person and project, maximizing your objectives while satisfying every constraint.',
     howStep3Title: 'Explore What-If Scenarios & Re-Plan',
     howStep3Desc: 'In agile environments, things change. "Can I accept this new project?" "What happens if Anna goes on leave?" Instantly re-plan and see the impact on your entire team.',
 
@@ -66,13 +66,13 @@ export const translations = {
     featuresTitle: 'Everything you need to',
     featuresTitleHighlight: 'plan smarter',
     featuresTitleEnd: '',
-    featuresSubtitle: 'ReSolve uses logic-based AI to guarantee constraint satisfaction and design the optimal project resource plan.',
+    featuresSubtitle: 'ReSolve uses logic-based AI to guarantee constraint satisfaction and design the optimal people plan.',
     feature1Title: 'Simple Web Platform',
     feature1Desc: 'An intuitive browser-based interface to manage your people, projects, and constraints. No installation is needed, just log in and start planning.',
     feature2Title: 'Automated Data Import / Export',
     feature2Desc: 'Import people, projects, and schedules from MS Project, Excel, or other tools.',
-    feature3Title: 'Optimal project resource plan',
-    feature3Desc: 'Automatically assign monthly hours per person and project. The logic-based AI respects all constraints and maximizes your objective (e.g., total billable hours).',
+    feature3Title: 'Optimal people plan',
+    feature3Desc: 'Automatically assign monthly hours per person and project. The logic-based AI respects all constraints and maximizes your objectives (e.g., total billable hours).',
     feature4Title: 'What-If Scenarios',
     feature4Desc: 'Ask "what if" questions and instantly see how changes (new hires, leaves, budget shifts) affect your entire plan.',
     feature5Title: 'New-Project Feasibility',
@@ -119,8 +119,8 @@ export const translations = {
   },
   de: {
     // Layout
-    siteTitle: 'ReSolve | Projekt-Ressourcenplanung',
-    siteDescription: 'ReSolve ist ein Planungstool für Teamleiter, das monatliche Arbeitsstunden optimal auf Personen und Projekte verteilt unter Einhaltung aller Einschränkungen (Constraints) und zur Maximierung der verrechenbaren Stunden.',
+    siteTitle: 'ReSolve | Personalplanung',
+    siteDescription: 'ReSolve ist ein Planungstool für Teamleiter, das monatliche Arbeitsstunden optimal auf Personen und Projekte verteilt unter Einhaltung aller Einschränkungen (Constraints) und zur Maximierung Ihrer individuellen KPIs.',
 
     // Navbar
     navWhoItsFor: 'Für wen ist ReSolve?',
@@ -129,13 +129,13 @@ export const translations = {
     navGetInTouch: 'Kontakt',
 
     // Hero
-    heroBadge: 'Projekt-Ressourcenplanung, optimiert',
+    heroBadge: 'Personalplanung, gelöst.',
     heroTitle1: ' | Lösen Sie das Chaos in der',
-    heroTitle2: 'Ressourcenplanung',
+    heroTitle2: 'Personalplanung',
     heroTitle3: 'in agilen Projekten und',
     heroTitle4: 'maximieren',
-    heroTitle5: 'Sie verrechenbare Stunden',
-    heroSubtitle: 'ReSolve verteilt monatliche Personenstunden pro Mitarbeiter und Projekt unter Einhaltung individueller Einschränkungen (Verfügbarkeit, Projektanforderungen, …) und maximiert die verrechenbaren Stunden.',
+    heroTitle5: 'Sie Ihre KPIs',
+    heroSubtitle: 'ReSolve verteilt monatliche Personenstunden pro Mitarbeiter und Projekt unter Einhaltung Ihrer individueller Einschränkungen (Verfügbarkeit, Projektanforderungen, …) und maximiert Ihre individuellen KPIs.',
     heroGetInTouch: 'Kontakt',
     heroHowItWorks: "So funktioniert's",
     heroCardTitle: 'Team-Plan | Q2 2026',
